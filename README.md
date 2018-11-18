@@ -1,4 +1,4 @@
-# Car_Rental_GUI_Database
+# Car Rental GUI Database
 <b>Overview</b><br/>
   JavaFX program for maintaining a car rental database. The user can access data from the program.
 
