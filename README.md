@@ -14,5 +14,5 @@
 <b>Employees Table</b><br/>
   The employee table holds all employee data that the company collects. This includes the fields employee_id, firstName, lastName, and country_of_residence. Employee_id is the primary key and best way to identify employees. The next columns are the employee's first name, last name, and country of residence.
   
-<b>Rentals</b><br/>
+<b>Rentals Table</b><br/>
   The rentals table holds all rental data that the company collects. This includes the fields rental_id, customer_id, vehicle_id, employee_id, location_id,revenue, insurance_purchase, and insurance_revenue. Rental_id is the primary key and best way to identify rentals. Fields customer_id, vehicle_id, employee_id, and location_id are foreign keys to the respective tables. The revenue column contains the rental's revenue. Insurance purchase can be Y or N to indicate if insurance was purchased. If insurance was purchased, insurance revenue will show the revenue associated with that rental.
