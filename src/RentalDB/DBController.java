@@ -1,3 +1,6 @@
+/************************************
+ * (C) Copyright 2018 by Tim Pettis *
+ ************************************/
 package RentalDB;
 
 import java.sql.SQLException;
@@ -13,7 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javax.swing.*;
 import javax.swing.table.*;
 
-
+//Controller class used for Car Rental Database
 public class DBController implements DBConnection {
 
   @FXML
@@ -23,30 +26,29 @@ public class DBController implements DBConnection {
   @FXML
   private TextField filterTextField;
 
-  // default query retrieves all data from Authors table
-  private static final String DEFAULT_QUERY = "SELECT * FROM CUSTOMERS";
+  //Default query retrieves all data from rentals table
+  private static final String DEFAULT_QUERY = "SELECT * FROM RENTALS";
 
-  // used for configuring JTable to display and sort data
   private ResultSetTableModel tableModel;
   private TableRowSorter<TableModel> sorter;
 
   public void initialize() {
     queryTextArea.setText(DEFAULT_QUERY);
 
-    // create app.model.ResultSetTableModel and display database table
+    //Create ResultSetTableModel and display database table
     try {
-      // create TableModel for results of DEFAULT_QUERY
+      //Create TableModel for results of DEFAULT_QUERY
       tableModel = new ResultSetTableModel(DATABASE_URL,
           USERNAME, PASSWORD, DEFAULT_QUERY);
 
-      // create JTable based on the tableModel
+      //Create JTable based on the tableModel
       JTable resultTable = new JTable(tableModel);
 
-      // set up row sorting for JTable
+      //Set up row sorting for JTable
       sorter = new TableRowSorter<>(tableModel);
       resultTable.setRowSorter(sorter);
 
-      // configure SwingNode to display JTable, then add to borderPane
+      //Configure SwingNode to display JTable, then add to borderPane
       SwingNode swingNode = new SwingNode();
       swingNode.setContent(new JScrollPane(resultTable));
       borderPane.setCenter(swingNode);
@@ -58,18 +60,17 @@ public class DBController implements DBConnection {
     }
   }
 
-  // query the database and display results in JTable
+  //Query the database and display results in JTable
   @FXML
   void submitQueryButtonPressed(ActionEvent event) {
-    // perform a new query
+    //Perform a new query
     try {
       tableModel.setQuery(queryTextArea.getText());
     } catch (SQLException sqlException) {
       displayAlert(AlertType.ERROR, "Database Error",
           sqlException.getMessage());
 
-      // try to recover from invalid user query
-      // by executing default query
+      //Try to recover from invalid user query by executing default query
       try {
         tableModel.setQuery(DEFAULT_QUERY);
         queryTextArea.setText(DEFAULT_QUERY);
@@ -82,7 +83,62 @@ public class DBController implements DBConnection {
     }
   }
 
-  // apply specified filter to results
+  @FXML
+  void RentalsButtonPressed(ActionEvent event) {
+    //Query the rentals table
+    try {
+      tableModel.setQuery("SELECT * FROM RENTALS");
+    } catch (SQLException sqlException) {
+      displayAlert(AlertType.ERROR, "Database Error",
+          sqlException.getMessage());
+    }
+  }
+
+  @FXML
+  void EmployeeButtonPressed(ActionEvent event) {
+    //Query the employees table
+    try {
+      tableModel.setQuery("SELECT * FROM EMPLOYEES");
+    } catch (SQLException sqlException) {
+      displayAlert(AlertType.ERROR, "Database Error",
+          sqlException.getMessage());
+    }
+  }
+
+  @FXML
+  void LocationButtonPressed(ActionEvent event) {
+    //Query the location table
+    try {
+      tableModel.setQuery("SELECT * FROM LOCATION");
+    } catch (SQLException sqlException) {
+      displayAlert(AlertType.ERROR, "Database Error",
+          sqlException.getMessage());
+    }
+  }
+
+  @FXML
+  void CustomersButtonPressed(ActionEvent event) {
+    //Query the customers table
+    try {
+      tableModel.setQuery("SELECT * FROM CUSTOMERS");
+    } catch (SQLException sqlException) {
+      displayAlert(AlertType.ERROR, "Database Error",
+          sqlException.getMessage());
+    }
+  }
+
+  @FXML
+  void FleetButtonPressed(ActionEvent event) {
+    //Query the fleet table
+    try {
+      tableModel.setQuery("SELECT * FROM FLEET");
+    } catch (SQLException sqlException) {
+      displayAlert(AlertType.ERROR, "Database Error",
+          sqlException.getMessage());
+    }
+  }
+
+  //Apply filter to results
   @FXML
   void applyFilterButtonPressed(ActionEvent event) {
     String text = filterTextField.getText();
@@ -99,7 +155,7 @@ public class DBController implements DBConnection {
     }
   }
 
-  // display an Alert dialog
+  //Display an Alert dialog
   private void displayAlert(
       AlertType type, String title, String message) {
     Alert alert = new Alert(type);
