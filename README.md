@@ -5,12 +5,12 @@
 --GIF OF PROGRAM
 
 <b>Project Requirements</b><br/>
--Use JavaFX
--Use a database
--No SpotBugs errors
--No CheckStyle errors
--Extensive inline documentation
--A README explaining the project
+-Use JavaFX<br/>
+-Use a database<br/>
+-No SpotBugs errors<br/>
+-No CheckStyle errors<br/>
+-Extensive inline documentation<br/>
+-A README explaining the project<br/>
 
 <b>Project Diagram</b><br/>
 <img src = "Diagram.PNG" />
