@@ -2,7 +2,7 @@
 <b>Overview</b><br/>
   JavaFX program for maintaining a car rental database. The user can access all company data from the program and query it to get specific results.
 
---GIF OF PROGRAM
+<img src = "CarRentalDB.gif"/>
 
 <b>Project Requirements</b><br/>
 - Use JavaFX<br/>
