@@ -4,8 +4,17 @@
 
 --GIF OF PROGRAM
 
+<b>Project Requirements</b><br/>
+-Use JavaFX
+-Use a database
+-No SpotBugs errors
+-No CheckStyle errors
+-Extensive inline documentation
+-A README explaining the project
 
+<b>Project Diagram</b><br/>
 
+<b>Table Details</b><br/>
 <b>Customers Table</b><br/>
   The customer table holds all customer data that the company collects. This includes the fields customer_id, firstName, lastName, and country_of_residence. Customer_id is the primary key and best way to identify customers. The next columns are the customer's first name, last name, and country of residence.
   
