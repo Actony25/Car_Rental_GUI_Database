@@ -13,7 +13,7 @@
 -A README explaining the project
 
 <b>Project Diagram</b><br/>
-Car_Rental_GUI_Database/Diagram.PNG
+<img src = "Diagram.PNG" />
 
 <b>Table Details</b><br/>
 <b>Customers Table</b><br/>
