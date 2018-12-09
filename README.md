@@ -2,6 +2,10 @@
 <b>Overview</b><br/>
   JavaFX program for maintaining a car rental database. The user can access data from the program.
 
+--GIF OF PROGRAM
+
+
+
 <b>Customers Table</b><br/>
   The customer table holds all customer data that the company collects. This includes the fields customer_id, firstName, lastName, and country_of_residence. Customer_id is the primary key and best way to identify customers. The next columns are the customer's first name, last name, and country of residence.
   
