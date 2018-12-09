@@ -1,6 +1,6 @@
 # Car Rental GUI Database
 <b>Overview</b><br/>
-  JavaFX program for maintaining a car rental database. The user can access data from the program.
+  JavaFX program for maintaining a car rental database. The user can access all company data from the program and query it to get specific results.
 
 --GIF OF PROGRAM
 
